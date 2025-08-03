@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog RSUD Kabupaten Buleleng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hover-scale { transition: transform 0.2s ease; }
+        .hover-scale:hover { transform: scale(1.02); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b-4 border-blue-600">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">🏥 RSUD Kabupaten Buleleng</h1>
+                <p class="text-lg text-gray-600">Katalog Unit dan Ruangan</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Home Page -->
+        <div id="homePage" class="fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Pilih Unit atau Ruangan</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Klik pada salah satu tombol di bawah untuk melihat informasi dan dokumen terkait unit atau ruangan yang dipilih.</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <!-- Row 1 -->
+                <button onclick="showPDF('IGD', 'Instalasi Gawat Darurat')" class="menu-btn bg-red-500 hover:bg-red-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🚨</div>
+                    <div class="font-semibold text-lg">IGD</div>
+                    <div class="text-sm opacity-90">Instalasi Gawat Darurat</div>
+                </button>
+
+                <button onclick="showPDF('Rawat Inap', 'Rawat Inap')" class="menu-btn bg-blue-500 hover:bg-blue-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🛏️</div>
+                    <div class="font-semibold text-lg">Rawat Inap</div>
+                    <div class="text-sm opacity-90">Ruang Perawatan</div>
+                </button>
+
+                <button onclick="showPDF('Rawat Jalan', 'Rawat Jalan')" class="menu-btn bg-green-500 hover:bg-green-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🚶</div>
+                    <div class="font-semibold text-lg">Rawat Jalan</div>
+                    <div class="text-sm opacity-90">Poliklinik</div>
+                </button>
+
+                <button onclick="showPDF('Kamar Operasi', 'Kamar Operasi')" class="menu-btn bg-purple-500 hover:bg-purple-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">⚕️</div>
+                    <div class="font-semibold text-lg">Kamar Operasi</div>
+                    <div class="text-sm opacity-90">Ruang Bedah</div>
+                </button>
+
+                <!-- Row 2 -->
+                <button onclick="showPDF('ICU', 'Intensive Care Unit')" class="menu-btn bg-orange-500 hover:bg-orange-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">💓</div>
+                    <div class="font-semibold text-lg">ICU</div>
+                    <div class="text-sm opacity-90">Intensive Care Unit</div>
+                </button>
+
+                <button onclick="showPDF('Laboratorium', 'Laboratorium')" class="menu-btn bg-teal-500 hover:bg-teal-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🔬</div>
+                    <div class="font-semibold text-lg">Laboratorium</div>
+                    <div class="text-sm opacity-90">Lab Patologi Klinik</div>
+                </button>
+
+                <button onclick="showPDF('Radiologi', 'Radiologi')" class="menu-btn bg-indigo-500 hover:bg-indigo-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">📡</div>
+                    <div class="font-semibold text-lg">Radiologi</div>
+                    <div class="text-sm opacity-90">Rontgen & CT Scan</div>
+                </button>
+
+                <button onclick="showPDF('Farmasi', 'Farmasi')" class="menu-btn bg-pink-500 hover:bg-pink-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">💊</div>
+                    <div class="font-semibold text-lg">Farmasi</div>
+                    <div class="text-sm opacity-90">Instalasi Farmasi</div>
+                </button>
+
+                <!-- Row 3 -->
+                <button onclick="showPDF('Poli Anak', 'Poliklinik Anak')" class="menu-btn bg-yellow-500 hover:bg-yellow-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">👶</div>
+                    <div class="font-semibold text-lg">Poli Anak</div>
+                    <div class="text-sm opacity-90">Poliklinik Anak</div>
+                </button>
+
+                <button onclick="showPDF('Poli Kandungan', 'Poliklinik Kandungan')" class="menu-btn bg-rose-500 hover:bg-rose-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🤱</div>
+                    <div class="font-semibold text-lg">Poli Kandungan</div>
+                    <div class="text-sm opacity-90">Obstetri & Ginekologi</div>
+                </button>
+
+                <button onclick="showPDF('Poli Bedah', 'Poliklinik Bedah')" class="menu-btn bg-gray-600 hover:bg-gray-700 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🔪</div>
+                    <div class="font-semibold text-lg">Poli Bedah</div>
+                    <div class="text-sm opacity-90">Poliklinik Bedah</div>
+                </button>
+
+                <button onclick="showPDF('Poli Dalam', 'Poliklinik Penyakit Dalam')" class="menu-btn bg-emerald-500 hover:bg-emerald-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🩺</div>
+                    <div class="font-semibold text-lg">Poli Dalam</div>
+                    <div class="text-sm opacity-90">Penyakit Dalam</div>
+                </button>
+
+                <!-- Row 4 -->
+                <button onclick="showPDF('Poli Mata', 'Poliklinik Mata')" class="menu-btn bg-cyan-500 hover:bg-cyan-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">👁️</div>
+                    <div class="font-semibold text-lg">Poli Mata</div>
+                    <div class="text-sm opacity-90">Poliklinik Mata</div>
+                </button>
+
+                <button onclick="showPDF('Poli THT', 'Poliklinik THT')" class="menu-btn bg-lime-500 hover:bg-lime-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">👂</div>
+                    <div class="font-semibold text-lg">Poli THT</div>
+                    <div class="text-sm opacity-90">Telinga Hidung Tenggorokan</div>
+                </button>
+
+                <button onclick="showPDF('Poli Jantung', 'Poliklinik Jantung')" class="menu-btn bg-red-600 hover:bg-red-700 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">❤️</div>
+                    <div class="font-semibold text-lg">Poli Jantung</div>
+                    <div class="text-sm opacity-90">Kardiologi</div>
+                </button>
+
+                <button onclick="showPDF('Poli Saraf', 'Poliklinik Saraf')" class="menu-btn bg-violet-500 hover:bg-violet-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🧠</div>
+                    <div class="font-semibold text-lg">Poli Saraf</div>
+                    <div class="text-sm opacity-90">Neurologi</div>
+                </button>
+
+                <!-- Row 5 -->
+                <button onclick="showPDF('Fisioterapi', 'Fisioterapi')" class="menu-btn bg-amber-500 hover:bg-amber-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🏃</div>
+                    <div class="font-semibold text-lg">Fisioterapi</div>
+                    <div class="text-sm opacity-90">Rehabilitasi Medik</div>
+                </button>
+
+                <button onclick="showPDF('Gizi', 'Instalasi Gizi')" class="menu-btn bg-green-600 hover:bg-green-700 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🥗</div>
+                    <div class="font-semibold text-lg">Gizi</div>
+                    <div class="text-sm opacity-90">Instalasi Gizi</div>
+                </button>
+
+                <button onclick="showPDF('Hemodialisa', 'Hemodialisa')" class="menu-btn bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🩸</div>
+                    <div class="font-semibold text-lg">Hemodialisa</div>
+                    <div class="text-sm opacity-90">Cuci Darah</div>
+                </button>
+
+                <button onclick="showPDF('CSSD', 'Central Sterile Supply Department')" class="menu-btn bg-slate-500 hover:bg-slate-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🧽</div>
+                    <div class="font-semibold text-lg">CSSD</div>
+                    <div class="text-sm opacity-90">Sterilisasi</div>
+                </button>
+
+                <!-- Row 6 -->
+                <button onclick="showPDF('Rekam Medis', 'Rekam Medis')" class="menu-btn bg-stone-500 hover:bg-stone-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">📋</div>
+                    <div class="font-semibold text-lg">Rekam Medis</div>
+                    <div class="text-sm opacity-90">Medical Record</div>
+                </button>
+
+                <button onclick="showPDF('Administrasi', 'Administrasi')" class="menu-btn bg-neutral-500 hover:bg-neutral-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">📄</div>
+                    <div class="font-semibold text-lg">Administrasi</div>
+                    <div class="text-sm opacity-90">Tata Usaha</div>
+                </button>
+
+                <button onclick="showPDF('Keuangan', 'Bagian Keuangan')" class="menu-btn bg-emerald-600 hover:bg-emerald-700 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">💰</div>
+                    <div class="font-semibold text-lg">Keuangan</div>
+                    <div class="text-sm opacity-90">Bagian Keuangan</div>
+                </button>
+
+                <button onclick="showPDF('Laundry', 'Laundry')" class="menu-btn bg-sky-500 hover:bg-sky-600 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">👕</div>
+                    <div class="font-semibold text-lg">Laundry</div>
+                    <div class="text-sm opacity-90">Pencucian</div>
+                </button>
+
+                <!-- Row 7 (Last row) -->
+                <button onclick="showPDF('Keamanan', 'Keamanan')" class="menu-btn bg-red-700 hover:bg-red-800 text-white p-6 rounded-xl shadow-lg hover-scale transition-all duration-200">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <div class="font-semibold text-lg">Keamanan</div>
+                    <div class="text-sm opacity-90">Security</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- PDF Viewer Page -->
+        <div id="pdfPage" class="hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 id="pdfTitle" class="text-3xl font-bold text-gray-800 mb-2"></h2>
+                        <p class="text-gray-600">Dokumen dan Informasi</p>
+                    </div>
+                    <button onclick="goHome()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center gap-2">
+                        <span>←</span> Kembali
+                    </button>
+                </div>
+
+                <!-- PDF Viewer -->
+                <div id="pdfViewer">
+                    <div class="bg-gray-100 rounded-xl p-4">
+                        <div id="loadingMessage" class="text-center py-8">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                            <p class="text-gray-600">Memuat dokumen PDF...</p>
+                        </div>
+                        <iframe 
+                            id="pdfFrame" 
+                            class="w-full h-96 md:h-[600px] rounded-lg border-2 border-gray-300 hidden" 
+                            frameborder="0"
+                            onload="hidePDFLoading()">
+                        </iframe>
+                        <div id="pdfError" class="hidden text-center py-8">
+                            <div class="text-red-500 text-6xl mb-4">📄</div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-2">Dokumen Belum Tersedia</h4>
+                            <p class="text-gray-600">PDF untuk unit ini sedang dalam proses upload atau belum dikonfigurasi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300">© 2024 RSUD Kabupaten Buleleng - Sistem Katalog Digital</p>
+        </div>
+    </footer>
+
+    <script>
+        // Database PDF links untuk setiap unit (contoh - ganti dengan link Google Drive yang sebenarnya)
+        const pdfDatabase = {
+            'IGD': 'https://drive.google.com/file/d/1Q0oCzAC3Q0pl1qRksdrNV_j8aAj3juw5/preview',
+            'Rawat Inap': 'https://drive.google.com/file/d/1example_rawat_inap_id/preview',
+            'Rawat Jalan': 'https://drive.google.com/file/d/1example_rawat_jalan_id/preview',
+            'Kamar Operasi': 'https://drive.google.com/file/d/1example_kamar_operasi_id/preview',
+            'ICU': 'https://drive.google.com/file/d/1example_icu_id/preview',
+            'Laboratorium': 'https://drive.google.com/file/d/1example_laboratorium_id/preview',
+            'Radiologi': 'https://drive.google.com/file/d/1example_radiologi_id/preview',
+            'Farmasi': 'https://drive.google.com/file/d/1example_farmasi_id/preview',
+            'Poli Anak': 'https://drive.google.com/file/d/1example_poli_anak_id/preview',
+            'Poli Kandungan': 'https://drive.google.com/file/d/1example_poli_kandungan_id/preview',
+            'Poli Bedah': 'https://drive.google.com/file/d/1example_poli_bedah_id/preview',
+            'Poli Dalam': 'https://drive.google.com/file/d/1example_poli_dalam_id/preview',
+            'Poli Mata': 'https://drive.google.com/file/d/1example_poli_mata_id/preview',
+            'Poli THT': 'https://drive.google.com/file/d/1example_poli_tht_id/preview',
+            'Poli Jantung': 'https://drive.google.com/file/d/1example_poli_jantung_id/preview',
+            'Poli Saraf': 'https://drive.google.com/file/d/1example_poli_saraf_id/preview',
+            'Fisioterapi': 'https://drive.google.com/file/d/1example_fisioterapi_id/preview',
+            'Gizi': 'https://drive.google.com/file/d/1example_gizi_id/preview',
+            'Hemodialisa': 'https://drive.google.com/file/d/1example_hemodialisa_id/preview',
+            'CSSD': 'https://drive.google.com/file/d/1example_cssd_id/preview',
+            'Rekam Medis': 'https://drive.google.com/file/d/1example_rekam_medis_id/preview',
+            'Administrasi': 'https://drive.google.com/file/d/1example_administrasi_id/preview',
+            'Keuangan': 'https://drive.google.com/file/d/1example_keuangan_id/preview',
+            'Laundry': 'https://drive.google.com/file/d/1example_laundry_id/preview',
+            'Keamanan': 'https://drive.google.com/file/d/1example_keamanan_id/preview'
+        };
+
+        function showPDF(unitName, fullName) {
+            // Hide home page and show PDF page
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('pdfPage').classList.remove('hidden');
+            
+            // Set the title
+            document.getElementById('pdfTitle').textContent = fullName;
+            
+            // Show loading state
+            showPDFLoading();
+            
+            // Load PDF automatically
+            loadPDFForUnit(unitName);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function loadPDFForUnit(unitName) {
+            const pdfUrl = pdfDatabase[unitName];
+            
+            if (pdfUrl && pdfUrl !== 'https://drive.google.com/file/d/1example_' + unitName.toLowerCase().replace(/\s+/g, '_') + '_id/preview') {
+                // Load the actual PDF
+                document.getElementById('pdfFrame').src = pdfUrl;
+            } else {
+                // Show error message if no PDF configured
+                setTimeout(() => {
+                    showPDFError();
+                }, 1000);
+            }
+        }
+
+        function showPDFLoading() {
+            document.getElementById('loadingMessage').classList.remove('hidden');
+            document.getElementById('pdfFrame').classList.add('hidden');
+            document.getElementById('pdfError').classList.add('hidden');
+        }
+
+        function hidePDFLoading() {
+            document.getElementById('loadingMessage').classList.add('hidden');
+            document.getElementById('pdfFrame').classList.remove('hidden');
+            document.getElementById('pdfError').classList.add('hidden');
+        }
+
+        function showPDFError() {
+            document.getElementById('loadingMessage').classList.add('hidden');
+            document.getElementById('pdfFrame').classList.add('hidden');
+            document.getElementById('pdfError').classList.remove('hidden');
+        }
+
+        function goHome() {
+            // Show home page and hide PDF page
+            document.getElementById('pdfPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            
+            // Clear PDF viewer
+            document.getElementById('pdfFrame').src = '';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Function to update PDF database (untuk admin)
+        function updatePDFLink(unitName, newUrl) {
+            // Convert Google Drive view link to preview link
+            let previewUrl = newUrl;
+            if (newUrl.includes('drive.google.com') && newUrl.includes('/view')) {
+                previewUrl = newUrl.replace('/view?usp=sharing', '/preview').replace('/view', '/preview');
+            }
+            
+            pdfDatabase[unitName] = previewUrl;
+            console.log(`PDF link updated for ${unitName}: ${previewUrl}`);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9695132c75024f50',t:'MTc1NDIxNjM0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
